@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Famille en Or - Accueil</title>
+    <link rel="icon" type="image/png" href="images/logo_vert.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <h1 class="main-title">🏆 LA FAMILLE EN OR 🏆</h1>
+                <p class="subtitle">Trouvez les réponses les plus populaires !</p>
+            </div>
+        </header>
+
+        <main class="categories-container">
+            <div class="game-options">
+                <div class="option-group">
+                    <label for="errorLimit">Nombre d'erreurs autorisées :</label>
+                    <select id="errorLimit">
+                        <option value="1">1 ❌</option>
+                        <option value="2">2 ❌</option>
+                        <option value="3" selected>3 ❌ (Normal)</option>
+                        <option value="4">4 ❌</option>
+                        <option value="5">5 ❌</option>
+                        <option value="10">10 ❌</option>
+                        <option value="999">∞ (Illimité)</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="hintsEnabled">
+                        <input type="checkbox" id="hintsEnabled">
+                        Activer les indices
+                    </label>
+                </div>
+                <div class="option-group">
+                    <label for="teamMode">
+                        <input type="checkbox" id="teamMode">
+                        Mode Équipe
+                    </label>
+                </div>
+            </div>
+            
+            <div id="teamConfig" class="team-config" style="display: none;">
+                <h3>⚔️ Configuration des Équipes</h3>
+                <div class="team-inputs">
+                    <div class="team-input-group">
+                        <label>Équipe 1 :</label>
+                        <input type="text" id="team1Name" placeholder="Nom de l'équipe 1" value="Équipe Rouge">
+                    </div>
+                    <div class="team-input-group">
+                        <label>Équipe 2 :</label>
+                        <input type="text" id="team2Name" placeholder="Nom de l'équipe 2" value="Équipe Bleue">
+                    </div>
+                    <button id="addTeamBtn" class="add-team-btn">➕ Ajouter une équipe</button>
+                </div>
+                <div id="extraTeams"></div>
+            </div>
+            
+            <h2 class="categories-title">Choisissez une Catégorie</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="general">
+                    <div class="category-icon">🎯</div>
+                    <h3>Culture Générale</h3>
+                    <p>Questions variées sur la vie quotidienne</p>
+                    <div class="category-stats">15 questions</div>
+                </div>
+
+                <div class="category-card" data-category="alimentation">
+                    <div class="category-icon">🍕</div>
+                    <h3>Alimentation</h3>
+                    <p>Tout sur la nourriture et les boissons</p>
+                    <div class="category-stats">12 questions</div>
+                </div>
+
+                <div class="category-card" data-category="travail">
+                    <div class="category-icon">💼</div>
+                    <h3>Travail & Métiers</h3>
+                    <p>Professions et vie professionnelle</p>
+                    <div class="category-stats">10 questions</div>
+                </div>
+
+                <div class="category-card" data-category="loisirs">
+                    <div class="category-icon">⚽</div>
+                    <h3>Loisirs & Sports</h3>
+                    <p>Activités et divertissements</p>
+                    <div class="category-stats">12 questions</div>
+                </div>
+
+                <div class="category-card" data-category="famille">
+                    <div class="category-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Famille & Maison</h3>
+                    <p>Vie de famille et quotidien</p>
+                    <div class="category-stats">10 questions</div>
+                </div>
+
+                <div class="category-card" data-category="voyages">
+                    <div class="category-icon">✈️</div>
+                    <h3>Voyages & Pays</h3>
+                    <p>Destinations et cultures</p>
+                    <div class="category-stats">10 questions</div>
+                </div>
+
+                <div class="category-card" data-category="technologie">
+                    <div class="category-icon">💻</div>
+                    <h3>Technologie</h3>
+                    <p>Informatique et innovations</p>
+                    <div class="category-stats">8 questions</div>
+                </div>
+
+                <div class="category-card" data-category="animaux">
+                    <div class="category-icon">🐶</div>
+                    <h3>Animaux & Nature</h3>
+                    <p>Faune et flore</p>
+                    <div class="category-stats">10 questions</div>
+                </div>
+
+                <div class="category-card" data-category="religion">
+                    <div class="category-icon">🕋</div>
+                    <h3>Religion (Islam)</h3>
+                    <p>Culture et pratiques islamiques</p>
+                    <div class="category-stats">15 questions</div>
+                </div>
+
+                <div class="category-card special" data-category="aleatoire">
+                    <div class="category-icon">🎲</div>
+                    <h3>Mode Aléatoire</h3>
+                    <p>Questions de toutes les catégories</p>
+                    <div class="category-stats">Toutes les questions</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+<footer class="logo-footer">
+    <img src="images/Logo CIMG VF GT.png" alt="Logo CIMG" class="footer-logo">
+    <p class="footer-text">© 2025 CIMG - Tous droits réservés</p>
+</footer>
+</html>

@@ -1,0 +1,877 @@
+/* ================================================================================================
+   LA FAMILLE EN OR - STYLES UNIFIÉS
+   Fichier CSS principal pour tout le jeu
+   ================================================================================================ */
+
+/* ================================================================================================
+   RESET & BASE STYLES
+   ================================================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================================================================================
+   CONTENEUR PRINCIPAL
+   ================================================================================================ */
+.container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.game-container {
+    max-width: 1400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* ================================================================================================
+   HEADER - EN-TÊTE DU JEU
+   ================================================================================================ */
+header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1, .main-title {
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.category-display {
+    margin-bottom: 15px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ================================================================================================
+   SCORE BOARD - TABLEAU DES SCORES
+   ================================================================================================ */
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.score, .errors {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.score-label, .error-label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-value {
+    font-size: 2em;
+    font-weight: bold;
+    background: white;
+    color: #f5576c;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+#crosses {
+    font-size: 2em;
+    display: flex;
+    gap: 10px;
+}
+
+/* ================================================================================================
+   OPTIONS DE JEU - PAGE D'ACCUEIL
+   ================================================================================================ */
+.game-options {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-group label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.option-group select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option-group select:hover {
+    border-color: #f5576c;
+    box-shadow: 0 0 10px rgba(245, 87, 108, 0.3);
+}
+
+.option-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* ================================================================================================
+   CONFIGURATION DES ÉQUIPES
+   ================================================================================================ */
+.team-config {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-config h3 {
+    text-align: center;
+    color: #667eea;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.team-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-input-group label {
+    font-weight: bold;
+    color: #333;
+    min-width: 100px;
+}
+
+.team-input-group input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.team-input-group input:focus {
+    outline: none;
+    border-color: #f5576c;
+    box-shadow: 0 0 10px rgba(245, 87, 108, 0.3);
+}
+
+.add-team-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.add-team-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+}
+
+#extraTeams {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* ================================================================================================
+   GRILLE DES CATÉGORIES
+   ================================================================================================ */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.category-card:hover::before {
+    opacity: 0.1;
+}
+
+.category-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.category-card:active {
+    transform: translateY(-5px) scale(1);
+}
+
+.category-card.special {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    grid-column: span 1;
+}
+
+.category-card.special h3,
+.category-card.special p {
+    color: white;
+}
+
+.category-card.special .category-stats {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.category-icon {
+    font-size: 4em;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.category-card h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.category-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.category-stats {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================================================================================
+   ZONE DE JEU - QUESTION ET RÉPONSES
+   ================================================================================================ */
+.game-layout {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hints-panel {
+    display: none;
+    flex: 0 0 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hints-panel h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hint-item {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.game-main {
+    flex: 1;
+}
+
+main {
+    padding: 40px;
+}
+
+#question {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.answers-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.answer-row {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.answer-row.revealed {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    animation: reveal 0.5s;
+}
+
+.answer-number {
+    background: white;
+    color: #667eea;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.answer-text {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.answer-percentage {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* ================================================================================================
+   PANNEAU DES ÉQUIPES
+   ================================================================================================ */
+.teams-panel {
+    display: none;
+    flex: 0 0 250px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.teams-panel h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-item {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.team-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.team-item.selected {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+}
+
+.team-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-score {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* ================================================================================================
+   SAISIE DE RÉPONSE
+   ================================================================================================ */
+.input-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 40px;
+}
+
+#answerInput {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#answerInput:focus {
+    outline: none;
+    border-color: #f5576c;
+    box-shadow: 0 0 20px rgba(245, 87, 108, 0.3);
+    transform: scale(1.02);
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#validateBtn {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+}
+
+#validateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(34, 197, 94, 0.4);
+}
+
+#nextBtn, #homeBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#nextBtn {
+    display: none;
+}
+
+#nextBtn:hover, #homeBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ================================================================================================
+   MODAL - FENÊTRE MODALE
+   ================================================================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    animation: slideIn 0.3s;
+}
+
+#modalTitle {
+    font-size: 2em;
+    color: #f5576c;
+    margin-bottom: 20px;
+}
+
+#modalMessage {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.modal-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ================================================================================================
+   RÉSUMÉ DE FIN DE JEU
+   ================================================================================================ */
+.game-summary {
+    text-align: left;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.questions-summary, .teams-summary {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.question-detail, .team-summary {
+    padding: 8px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+/* ================================================================================================
+   CONFETTI - ANIMATIONS DE CÉLÉBRATION
+   ================================================================================================ */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall 3s linear forwards;
+}
+
+/* ================================================================================================
+   FOOTER - PIED DE PAGE
+   ================================================================================================ */
+.logo-footer {
+    background: white;
+    text-align: center;
+    padding: 15px;
+    width: 100vw;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: 30px;
+}
+
+.footer-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.footer-text {
+    color: #333;
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+}
+
+/* ================================================================================================
+   ANIMATIONS
+   ================================================================================================ */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================================================================================================
+   ANIMATIONS AU CHARGEMENT DES CATÉGORIES
+   ================================================================================================ */
+.category-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.category-card:nth-child(1) { animation-delay: 0.1s; }
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.3s; }
+.category-card:nth-child(4) { animation-delay: 0.4s; }
+.category-card:nth-child(5) { animation-delay: 0.5s; }
+.category-card:nth-child(6) { animation-delay: 0.6s; }
+.category-card:nth-child(7) { animation-delay: 0.7s; }
+.category-card:nth-child(8) { animation-delay: 0.8s; }
+.category-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* ================================================================================================
+   RESPONSIVE DESIGN - ADAPTATIONS MOBILE ET TABLETTE
+   ================================================================================================ */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 10px 0 10px;
+    }
+
+    .container, .game-container {
+        max-width: 100%;
+    }
+
+    h1, .main-title {
+        font-size: 2.2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    #question {
+        font-size: 1.3em;
+    }
+
+    .answer-text {
+        font-size: 1em;
+    }
+
+    .input-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    #answerInput {
+        min-width: 100%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-card.special {
+        grid-column: span 1;
+    }
+
+    .answers-board {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .game-layout {
+        flex-direction: column;
+    }
+
+    .hints-panel, .teams-panel {
+        flex: 1;
+        width: 100%;
+    }
+
+    .game-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container, .game-container {
+        max-width: 95%;
+    }
+}
+
+/* ================================================================================================
+   FIN DU FICHIER CSS
+   ================================================================================================ */

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Famille en Or - Jeu</title>
+    <link rel="icon" type="image/png" href="images/logo_vert.png">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 LA FAMILLE EN OR 🏆</h1>
+            <div class="category-display">
+                <span class="category-badge" id="categoryBadge">CATÉGORIE</span>
+            </div>
+            <div class="score-board">
+                <div class="score">
+                    <span class="score-label">Score Total:</span>
+                    <span class="score-value" id="score">0%</span>
+                </div>
+                <div class="errors">
+                    <span class="error-label">Erreurs:</span>
+                    <div id="crosses"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-layout">
+            <aside id="hintsPanel" class="hints-panel" style="display: none;">
+                <h3>💡 Indices</h3>
+                <div id="hintsList"></div>
+            </aside>
+
+            <main class="game-main">
+                <div class="question-container">
+                    <p class="question-number">Question <span id="questionNum">1</span>/<span id="totalQuestions">10</span></p>
+                    <h2 id="question">Chargement de la question...</h2>
+                </div>
+
+                <div class="answers-board">
+                    <div class="answer-row" id="answer-1">
+                        <div class="answer-number">1</div>
+                        <div class="answer-content">
+                            <span class="answer-text"></span>
+                            <span class="answer-points"></span>
+                        </div>
+                    </div>
+                    <div class="answer-row" id="answer-2">
+                        <div class="answer-number">2</div>
+                        <div class="answer-content">
+                            <span class="answer-text"></span>
+                            <span class="answer-points"></span>
+                        </div>
+                    </div>
+                    <div class="answer-row" id="answer-3">
+                        <div class="answer-number">3</div>
+                        <div class="answer-content">
+                            <span class="answer-text"></span>
+                            <span class="answer-points"></span>
+                        </div>
+                    </div>
+                    <div class="answer-row" id="answer-4">
+                        <div class="answer-number">4</div>
+                        <div class="answer-content">
+                            <span class="answer-text"></span>
+                            <span class="answer-points"></span>
+                        </div>
+                    </div>
+                    <div class="answer-row" id="answer-5">
+                        <div class="answer-number">5</div>
+                        <div class="answer-content">
+                            <span class="answer-text"></span>
+                            <span class="answer-points"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <input type="text" id="userAnswer" placeholder="Tapez votre réponse..." autocomplete="off">
+                    <button id="submitBtn">✅ VALIDER</button>
+                </div>
+
+                <div class="controls">
+                    <button id="nextBtn" style="display: none;">➡️ Question Suivante</button>
+                    <button id="hintBtn" style="display: none;">💡 Indice</button>
+                    <button id="homeBtn" class="home-btn">🏠 Accueil</button>
+                </div>
+            </main>
+
+            <aside id="teamsPanel" class="teams-panel" style="display: none;">
+                <h3>🏆 Équipes</h3>
+                <div class="teams-list"></div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="endModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="endTitle">Fin du jeu</h2>
+            <p id="endMessage"></p>
+            <p id="endScore"></p>
+            <button id="playAgainBtn">🔄 Rejouer</button>
+            <button class="modal-btn" onclick="window.location.href='index.html'">🏠 Accueil</button>
+        </div>
+    </div>
+
+    <footer class="logo-footer">
+        <img src="images/Logo CIMG VF GT.png" alt="Logo CIMG" class="footer-logo">
+        <p class="footer-text">© 2025 CIMG - Tous droits réservés</p>
+    </footer>
+
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/confetti.js"></script>
+    <script src="assets/js/game.js"></script>
+</body>
+</html>
