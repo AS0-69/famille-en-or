@@ -1,4 +1,5 @@
-﻿const questionsDatabase = {
+// Définir questionsDatabase comme variable globale
+window.questionsDatabase = {
     general: [
         {
             question: "Citez un métier dangereux",
@@ -100,12 +101,6 @@
                 { text: "Chocolat", percentage: 5, variants: ["Chocolats", "Bonbons", "Sucreries"] }
             ]
         },
-        {
-Voici le code mis à jour. J'ai ajouté des variants pertinents (synonymes, abréviations courantes, argot ou termes très proches) là où c'était nécessaire pour faciliter la reconnaissance des réponses.
-JavaScript
-
-const questionsDatabase = {
-    general: [
         {
             question: "Citez quelque chose qu'on fait sous la douche",
             answers: [
