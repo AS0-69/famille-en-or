@@ -1,6 +1,128 @@
-﻿// Définir questionsDatabase comme variable globale
-window.questionsDatabase = {
-    general: [
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche de Correction - Une Famille en Or</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .header-main {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 20px;
+        }
+
+        h1 { color: #c0392b; margin: 0; }
+        p.subtitle { color: #7f8c8d; font-style: italic; }
+
+        .category-section {
+            margin-top: 40px;
+            page-break-before: always; 
+        }
+        
+        .category-section:first-of-type { page-break-before: auto; }
+
+        .category-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .question-block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            page-break-inside: avoid; 
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        th {
+            background-color: #ecf0f1;
+            text-align: left;
+            padding: 8px;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        .col-answer { width: 30%; font-weight: bold; }
+        .col-percentage { width: 10%; text-align: center; color: #e74c3c; font-weight: bold; }
+        .col-variants { width: 60%; color: #7f8c8d; font-style: italic; }
+
+        .print-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .print-btn:hover { background-color: #219150; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .print-btn { display: none; }
+            .question-block { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Cliquer ici pour Imprimer / Enregistrer en PDF</button>
+
+    <div class="header-main">
+        <h1>Fiche Animateur / Réponses</h1>
+        <p class="subtitle">Base de données complète avec synonymes et Pourcentages</p>
+    </div>
+
+    <div id="content-area"></div>
+
+    <script>
+
+        const questionsDatabase = {
+           general: [
         {
             question: "Citez un métier dangereux",
             answers: [
@@ -908,7 +1030,7 @@ window.questionsDatabase = {
         {
             question: "Citez un prophète en Islam",
             answers: [
-                { text: "Muhammad ﷺ", percentage: 35, variants: ["Mohammed", "Mohamed", "Mahomet", "Prophete Muhammad", "Muhammad saws", "Muhammad saw", "Muhammad pbuh"] },
+                { text: "Muhammad ﷺ", percentage: 35, variants: ["Mohammed", "Mohamed", "Prophete Muhammad", "Muhammad saws", "Muhammad saw", "Muhammad pbuh"] },
                 { text: "Issa (AS)", percentage: 25, variants: ["Jesus", "Jésus", "Isa", "Issa aleyhi salam"] },
                 { text: "Moussa (AS)", percentage: 20, variants: ["Moise", "Moïse", "Musa", "Moussa aleyhi salam"] },
                 { text: "Ibrahim (AS)", percentage: 12, variants: ["Abraham", "Ibraheem", "Ibrahim aleyhi salam"] },
@@ -1045,4 +1167,64 @@ window.questionsDatabase = {
             ]
         }
     ]
-};
+        };
+
+        const container = document.getElementById('content-area');
+
+        // Générer le HTML
+        for (const [categoryName, questions] of Object.entries(questionsDatabase)) {
+            
+            // Créer la section de catégorie
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-section';
+            
+            const categoryTitle = document.createElement('h2');
+            categoryTitle.className = 'category-title';
+            categoryTitle.textContent = "Catégorie : " + categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
+            categorySection.appendChild(categoryTitle);
+
+            // Boucler sur les questions
+            questions.forEach(q => {
+                const qBlock = document.createElement('div');
+                qBlock.className = 'question-block';
+
+                const qText = document.createElement('div');
+                qText.className = 'question-text';
+                qText.textContent = q.question;
+                qBlock.appendChild(qText);
+
+                // Table des réponses
+                const table = document.createElement('table');
+                
+                // En-tête du tableau
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                headerRow.innerHTML = `<th>Réponse</th><th>Pourcentage</th><th>Synonymes acceptés / Variantes</th>`;
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                // Corps du tableau
+                const tbody = document.createElement('tbody');
+                q.answers.forEach(ans => {
+                    const row = document.createElement('tr');
+                    
+                    const variantsText = ans.variants ? ans.variants.join(', ') : '-';
+
+                    row.innerHTML = `
+                        <td class="col-answer">${ans.text}</td>
+                        <td class="col-percentage">${ans.percentage}</td>
+                        <td class="col-variants">${variantsText}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                table.appendChild(tbody);
+                qBlock.appendChild(table);
+
+                categorySection.appendChild(qBlock);
+            });
+
+            container.appendChild(categorySection);
+        }
+    </script>
+</body>
+</html>
