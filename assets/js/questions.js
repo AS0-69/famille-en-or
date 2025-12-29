@@ -908,7 +908,7 @@ window.questionsDatabase = {
         {
             question: "Citez un prophète en Islam",
             answers: [
-                { text: "Muhammad ﷺ", percentage: 35, variants: ["Mohammed", "Mohamed", "Mahomet", "Prophete Muhammad", "Muhammad saws", "Muhammad saw", "Muhammad pbuh"] },
+                { text: "Muhammad ﷺ", percentage: 35, variants: ["Mohammed", "Mohamed", "Prophete Muhammad", "Muhammad saws", "Muhammad saw", "Muhammad pbuh"] },
                 { text: "Issa (AS)", percentage: 25, variants: ["Jesus", "Jésus", "Isa", "Issa aleyhi salam"] },
                 { text: "Moussa (AS)", percentage: 20, variants: ["Moise", "Moïse", "Musa", "Moussa aleyhi salam"] },
                 { text: "Ibrahim (AS)", percentage: 12, variants: ["Abraham", "Ibraheem", "Ibrahim aleyhi salam"] },
